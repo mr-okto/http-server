@@ -24,7 +24,7 @@ void Server::register_client() {
 
 void Server::accept_handler(const boost::system::error_code &error) {
     if (error) {
-        std::cerr << "Accept error: " << error.message() << std::endl;
+        std::cerr << "Accept error: " << error.message() << std::endl << std::flush;
         return;
     }
     threads_counter_m.inc();

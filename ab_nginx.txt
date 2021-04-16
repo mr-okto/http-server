@@ -1,0 +1,53 @@
+This is ApacheBench, Version 2.3 <$Revision: 1879490 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed 1000 requests
+Completed 2000 requests
+Completed 3000 requests
+Completed 4000 requests
+Completed 5000 requests
+Completed 6000 requests
+Completed 7000 requests
+Completed 8000 requests
+Completed 9000 requests
+Completed 10000 requests
+Finished 10000 requests
+
+
+Server Software:        nginx/1.18.0
+Server Hostname:        localhost
+Server Port:            8080
+
+Document Path:          /httptest/jquery-1.9.1.js
+Document Length:        268381 bytes
+
+Concurrency Level:      100
+Time taken for tests:   1.879 seconds
+Complete requests:      10000
+Failed requests:        0
+Total transferred:      2686320000 bytes
+HTML transferred:       2683810000 bytes
+Requests per second:    5322.37 [#/sec] (mean)
+Time per request:       18.789 [ms] (mean)
+Time per request:       0.188 [ms] (mean, across all concurrent requests)
+Transfer rate:          1396249.84 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    1   0.8      1      14
+Processing:     6   18   3.5     17      35
+Waiting:        0    1   0.9      1      14
+Total:          7   19   3.8     18      39
+
+Percentage of the requests served within a certain time (ms)
+  50%     18
+  66%     19
+  75%     20
+  80%     21
+  90%     23
+  95%     27
+  98%     30
+  99%     31
+ 100%     39 (longest request)

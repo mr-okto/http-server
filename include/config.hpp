@@ -13,7 +13,7 @@ public:
     [[nodiscard]] unsigned int get_thread_limit() const;
 private:
     unsigned int port_m = 80;
-    unsigned int thread_limit_m = 4;
+    unsigned int thread_limit_m = 256;
     std::string document_root_m = "/var/www/html";
 };
 

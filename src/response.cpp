@@ -10,7 +10,7 @@ std::string Response::get_response(const std::string& method,
     std::stringstream resp_ss;
     resp_ss << version << ' ';
     std::stringstream headers_ss;
-    headers_ss << "Server: nginx\r\n"
+    headers_ss << "Server: http_server\r\n"
         << "Date: " << get_date() << "\r\n"
         << "Connection: Closed\r\n";
     std::string headers = headers_ss.str();

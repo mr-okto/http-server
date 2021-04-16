@@ -1,14 +1,11 @@
-#include <iostream>
-#include "Config.hpp"
+#include <server.hpp>
+#include "config.hpp"
 
 int main(int argc, char** argv) {
-    std::string config_path = "httpd.conf";
-    if (argc > 1) {
-        config_path = argv[1];
-    }
+    std::string config_path = (argc > 1)? argv[1]: "httpd.conf";
     auto config = Config(config_path);
-    std::cout << "Config port: " << config.get_port()
-        << ", root: " << config.get_root()
-        << ", thread_limit: " <<config.get_thread_limit();
+
+    Server server(config);
+    server.start();
     return 0;
 }

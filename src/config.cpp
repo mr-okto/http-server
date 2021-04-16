@@ -1,8 +1,10 @@
-#include "Config.hpp"
-
+#include "config.hpp"
 #include <fstream>
 #include <sstream>
 
+Config::Config(const std::string &f_conf): Config() {
+    this->parse(f_conf);
+}
 
 void Config::parse(const std::string &f_conf) {
     std::ifstream cfg(f_conf);
@@ -22,7 +24,7 @@ void Config::parse(const std::string &f_conf) {
     cfg.close();
 }
 
-std::string Config::get_root() {
+std::string Config::get_root() const {
     return document_root_m;
 }
 
@@ -34,6 +36,3 @@ unsigned int Config::get_thread_limit() const {
     return thread_limit_m;
 }
 
-Config::Config(const std::string &f_conf): Config() {
-    this->parse(f_conf);
-}

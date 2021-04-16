@@ -16,7 +16,7 @@ public:
     void start();
 
 private:
-    void register_client();
+    void register_runner();
     void accept_handler(const boost::system::error_code &error);
 
     const Config& config_m;

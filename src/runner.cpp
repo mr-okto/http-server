@@ -12,9 +12,9 @@ void Runner::handle_request(ThreadsCounter& counter) {
     try {
         Request r;
         boost::asio::streambuf buf;
-        boost::asio::read_until (socket_m, buf, "\r\n\r\n");
+        boost::asio::read_until(socket_m, buf, "\r\n\r\n");
         std::string r_data((std::istreambuf_iterator<char>(&buf)),
-                           std::istreambuf_iterator<char>() );
+                           std::istreambuf_iterator<char>());
         if (!r.parse(r_data.c_str())) {
             std::cerr << "Unable to process request: " << r_data << std::endl;
         }

@@ -7,14 +7,14 @@ Server::Server(const Config &conf)
           acceptor_m(ioservice_m,
                      boost::asio::ip::tcp::endpoint(
                              boost::asio::ip::tcp::v4(), conf.get_port())) {
-    register_client();
+    register_runner();
 }
 
 void Server::start() {
     ioservice_m.run();
 }
 
-void Server::register_client() {
+void Server::register_runner() {
     conn_handler_m = std::make_shared<Runner>(config_m.get_root(), ioservice_m);
     acceptor_m.async_accept(
             conn_handler_m->get_socket(),
@@ -30,5 +30,5 @@ void Server::accept_handler(const boost::system::error_code &error) {
     threads_counter_m.inc();
     std::thread(std::bind(&Runner::handle_request, conn_handler_m,
                            std::ref(threads_counter_m))).detach();
-    register_client();
+    register_runner();
 }
